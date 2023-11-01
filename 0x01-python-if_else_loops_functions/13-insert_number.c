@@ -24,6 +24,11 @@ return (NULL);
 inserted->n = number;
 if (*head == NULL)
 *head = inserted;
+else if ((*head)->n >= number)
+{
+inserted->next = *head;
+*head = inserted;
+}
 else
 {
 while (current->next != NULL)
