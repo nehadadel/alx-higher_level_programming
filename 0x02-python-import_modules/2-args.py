@@ -8,5 +8,5 @@ if __name__ == "__main__":
         print(":")
         i = 1
         while i <= len(argv) - 1:
-            print("{}: {}".format(i, argv[i]))
+            print("{:d}: {:s}".format(i, argv[i]))
             i += 1
