@@ -1,4 +1,4 @@
-#!/usr/bin/python3                                                                                                                           
+#!/usr/bin/python3
 from calculator_1 import add, sub, mul, div
 from sys import argv
 if __name__ == "__main__":
@@ -19,4 +19,4 @@ if __name__ == "__main__":
         if argv[2] == '/':
             func = div
         result = func(int(argv[1]), int(argv[3]))
-        print("{} {} {} = {}".format(argv[1],argv[2],argv[3],result))
+        print("{} {} {} = {}".format(argv[1], argv[2], argv[3], result))
