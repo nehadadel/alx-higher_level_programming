@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-from functools import reduce
-print(reduce(lambda x, _: print(chr(x), end=''), range(65, 91), None), end='\n')
+s = range(65, 91)
+print reduce(lambda x, y: str(x) +str(y), s)
