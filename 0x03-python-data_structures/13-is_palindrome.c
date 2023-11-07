@@ -1,6 +1,12 @@
 #include "lists.h"
 #include <stdlib.h>
-
+/**
+ *is_palindrome - check if linked list is palindrome or not
+ *
+ *@head: pointer to pointer to head of linkedlist
+ *
+ *Return: 1 if palindrome, 0 if not
+*/
 int is_palindrome(listint_t **head)
 {
 const listint_t *current;
@@ -31,7 +37,7 @@ i += 1;
 }
 for (i = 0; i < len / 2; i++)
 {
-if (array[i] == array[len - 1 -i])
+if (array[i] == array[len - 1 - i])
 continue;
 else
 return (0);
