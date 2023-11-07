@@ -1,5 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
+
 /**
  *is_palindrome - check if linked list is palindrome or not
  *
@@ -40,8 +41,11 @@ for (i = 0; i < len / 2; i++)
 if (array[i] == array[len - 1 - i])
 continue;
 else
+{
+free(array);
 return (0);
 }
+}
+free(array);
 return (1);
 }
-
