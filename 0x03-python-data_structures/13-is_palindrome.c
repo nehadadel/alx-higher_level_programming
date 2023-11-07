@@ -1,31 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- *reverse_listint - reverses a listint_t linked list.
- *
- *@head: headr pointer
- *
- *Return: return reverse listint
-*/
-listint_t *reverse_listint(listint_t **head)
-{
-listint_t *current = *head;
-listint_t *prev = NULL;
-
-if (*head == NULL)
-return (NULL);
-
-while (*head != NULL)
-{
-current = (*head)->next;
-(*head)->next = prev;
-prev = *head;
-(*head) = current;
-}
-*head = prev;
-return (*head);
-}
-/**
  *is_palindrome - check if linked list is palindrome or not
  *
  *@head: pointer to pointer to head of linkedlist
@@ -34,18 +9,38 @@ return (*head);
 */
 int is_palindrome(listint_t **head)
 {
-const listint_t *current, *temp;
-listint_t *reversed_linkedlist = reverse_listint(head);
+const listint_t *current;
+unsigned int len; /* number of nodes */
+int *array;
+unsigned int i;
+
+if (*head == NULL)
+return (1);
+
 current = *head;
-temp = reversed_linkedlist;
+len = 0;
 while (current != NULL)
 {
-if (temp->n != current->n)
-{
-return (0);
-}
 current = current->next;
-temp = temp->next;
+len++;
+}
+array = malloc(sizeof(int) * len);
+if (array == NULL)
+return (0);
+current = *head;
+i = 0;
+while (current != NULL)
+{
+array[i] = current->n;
+current = current->next;
+i += 1;
+}
+for (i = 0; i < len / 2; i++)
+{
+if (array[i] == array[len - 1 - i])
+continue;
+else
+return (0);
 }
 return (1);
 }
