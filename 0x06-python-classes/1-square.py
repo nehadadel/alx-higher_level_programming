@@ -9,6 +9,6 @@ defining the square
 class Square:
     """a 2d square"""
     def __init__(self, size):
-        self.size = size
+        self.__size = size
 
     pass
