@@ -14,8 +14,8 @@ class Rectangle:
         - length (float): The length of the rectangle.
         - width (float): The width of the rectangle.
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
 
     def width(self):
