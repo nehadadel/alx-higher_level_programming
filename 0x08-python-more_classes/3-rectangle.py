@@ -19,7 +19,7 @@ class Rectangle:
         for index in range(self.__height):
             rect.append(size)
         return "\n".join(rect)
-    
+
     @property
     def width(self):
         """Rectangle width getter"""
@@ -57,5 +57,3 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return 0
         return (self.__height + self.__width) * 2
-
-    
