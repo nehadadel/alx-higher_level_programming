@@ -3,11 +3,7 @@
 
 
 class Rectangle:
-    """A simple class representing a rectangle.
-    
-    Attributes:
-    - length (float): The length of the rectangle.
-    - width (float): The width of the rectangle.
+    """A simple class representing a rectange
     """
 
     def __init__(self, width=0, height=0):
