@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+"""MYLIST class
+child of list
+
+"""
+
+
+class MyList(list):
+    """print sorted """
+    def print_sorted(self):
+        tmp = self.copy()
+        print(sorted(tmp))
