@@ -2,7 +2,6 @@
 """hello """
 
 
-
 def lookup(obj):
     """Lookup function"""
     return dir(obj)
