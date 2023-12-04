@@ -13,3 +13,55 @@ Test 0:
     >>> mylist = MyList() 
     >>> mylist.print_sorted()
     []
+
+Test 1:
+
+     >>> mylist = MyList()
+     >>> mylist.append(9)
+     >>> mylist.append(-1)
+     >>> mylist.append(0)
+     >>> mylist.append(-9)
+     >>> mylist.append(5)
+     >>> mylist.print_sorted()
+     [-9, -1, 0, 5. 9]
+
+Test 2:
+
+     >>> mylist = MyList()
+     >>> mylist.append(-9)
+     >>> mylist.append(-1)
+     >>> mylist.append(-8)
+     >>> mylist.append(-9)
+     >>> mylist.append(-5)
+     >>> mylist.print_sorted()
+     [-9, -9, -8, -5. -1]
+
+Test 3:
+
+     >>> mylist = MyList()
+     >>> mylist.append(9)
+     >>> mylist.append(1)
+     >>> mylist.append(8)
+     >>> mylist.append(9)
+     >>> mylist.append(5)
+     >>> mylist.print_sorted()
+     [1, 5, 8, 9, 9]
+
+Test 4:
+
+     >>> mylist = MyList()
+     >>> mylist.append(90000000)
+     >>> mylist.append(189235)
+     >>> mylist.append(8000)
+     >>> mylist.append(9975632)
+     >>> mylist.append(50528)
+     >>> mylist.print_sorted()
+     [8000, 50528, 189235, 9975632, 90000000]
+
+Test 5:
+
+     >>> mylist = MyList()
+     >>> mylist.print_sorted(35)
+     Traceback (most recent call last):
+        ...
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
