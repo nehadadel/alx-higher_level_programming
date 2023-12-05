@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" task 8 """
+""" task 9 """
 
 
 class BaseGeometry:
@@ -14,8 +14,6 @@ class BaseGeometry:
             raise TypeError(name + ' must be an integer')
         if value <= 0:
             raise ValueError(name + ' must be greater than 0')
-
-
 """ class rectangle """
 
 
@@ -27,3 +25,10 @@ class Rectangle(BaseGeometry):
         self.integer_validator('height', height)
         self.__width = width
         self.__height = height
+    def area(self):
+        """ area"""
+        return self.__width * self.__height
+    def __str__(self):
+        """Overcharge __str__"""
+        string = "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
+        return string
