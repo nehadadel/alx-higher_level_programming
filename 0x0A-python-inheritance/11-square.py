@@ -53,5 +53,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """Overcharge __str__"""
-        string = "[Square] " + str(self.__width) + "/" + str(self.__height)
+        string = "[Square] " + str(self.__size) + "/" + str(self.__size)
         return string
