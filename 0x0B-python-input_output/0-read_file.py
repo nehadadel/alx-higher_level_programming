@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-
+""" task0 """
 
 def read_file(filename=""):
     """ read file """
