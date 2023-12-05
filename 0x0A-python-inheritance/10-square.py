@@ -14,8 +14,6 @@ class BaseGeometry:
             raise TypeError(name + ' must be an integer')
         if value <= 0:
             raise ValueError(name + ' must be greater than 0')
-
-
 """ class rectangle """
 
 
@@ -27,12 +25,24 @@ class Rectangle(BaseGeometry):
         self.integer_validator('height', height)
         self.__width = width
         self.__height = height
-
     def area(self):
         """ area"""
         return self.__width * self.__height
-
     def __str__(self):
         """Overcharge __str__"""
         string = "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
         return string
+
+
+""" class squre """
+
+
+class Square(Rectangle):
+    """ squre """
+    def __init__(self, size):
+        self.integer_validator('size', size)
+        self.__size = size
+    def area(self):
+        """ area """
+        return self.__size ** 2
+    
