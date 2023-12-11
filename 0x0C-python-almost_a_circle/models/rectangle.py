@@ -84,3 +84,11 @@ class Rectangle(Base):
         return '[{}] ({}) {}/{} - {}/{}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width,
                    self.height)
+
+    def update(self, *args):
+        " that assigns an argument to each attribute:"
+        self.id = args[0]
+        self.width = args[1]
+        self.height = args[2]
+        self.x = args[3]
+        self.y = args[4]
