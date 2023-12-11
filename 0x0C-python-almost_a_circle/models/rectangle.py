@@ -6,6 +6,8 @@ class Rectangle
 """
 
 from models.base import Base
+
+
 class Rectangle(Base):
     """class"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -56,11 +58,29 @@ class Rectangle(Base):
         self.integer_validator("y", y)
         self.__y = y
 
-    def integer_validator(self, name, value, flag = True):
+    def integer_validator(self, name, value, flag=True):
         """integer_validator function"""
         if type(value) != int:
             raise TypeError(name + ' must be an integer')
-        if value <= 0 and flag == False:
+        if value <= 0 and flag is False:
             raise ValueError(name + ' must be > 0')
-        elif value < 0 and flag == True:
+        elif value < 0 and flag is True:
             raise ValueError(name + ' must be >= 0')
+
+    def area(self):
+        "area of rectanglar"
+        return self.__width * self.__height
+
+    def display(self):
+        "that prints in stdout the Rectangle instance with the character #"
+        for b in range(self.__y):
+            print()
+        for i in range(self.__height):
+            print(self.__x * ' ', end='')
+            print(self.__width * '#')
+
+    def __str__(self):
+        "__str__"
+        return '[{}] ({}) {}/{} - {}/{}'.\
+            format(type(self).__name__, self.id, self.x, self.y, self.width,
+                   self.height)
