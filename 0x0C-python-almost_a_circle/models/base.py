@@ -38,5 +38,5 @@ class Base:
         if list_objs is not None:
             for i in range(len(list_objs)):
                 content.append(cls.to_dictionary(list_object[i]))
-            with open(filename, "w") as write_file:
-                json.dump(content, write_file)
+        with open(filename, "w") as write_file:
+            write_file.write(cls.to_json_string(content))
