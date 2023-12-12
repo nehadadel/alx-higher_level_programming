@@ -25,6 +25,8 @@ class Base:
 
     def to_json_string(list_dictionaries):
         " that returns the JSON string representation of list_dictionaries"
+        if not isinstance(list_dictionaries, dict):
+            raise TypeError("list_dictionaries must be a list of dictionaries")
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
