@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import json
 
 
 """class base:
@@ -9,6 +8,7 @@ and to avoid duplicating the same code (by extension, same bugs)
 """
 
 
+import json
 class Base:
     """class"""
     __nb_objects = 0
