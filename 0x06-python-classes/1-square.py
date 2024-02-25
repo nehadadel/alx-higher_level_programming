@@ -11,3 +11,5 @@ class Square:
         def __init__(self, size):
                 """init of class"""
                 self.__size = size
+
+        pass
