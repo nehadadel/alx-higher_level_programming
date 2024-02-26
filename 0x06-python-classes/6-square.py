@@ -46,6 +46,7 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
+        print("" * self.__position[1])
         if self.__size == 0:
             print("")
         else:
