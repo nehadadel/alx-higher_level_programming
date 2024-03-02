@@ -9,7 +9,7 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError(name + " must be an integer")
         if value < 0:
-            raise ValueError(name +" must be >= 0")
+            raise ValueError(name + " must be >= 0")
 
     @property
     def width(self):
