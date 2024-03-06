@@ -32,7 +32,7 @@ class Rectangle:
         self.__height = value
 
     def __init__(self, width=0, height=0):
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
         self.value_validation(width, "width")
         self.__width = width
         self.value_validation(height, "height")
@@ -61,5 +61,5 @@ class Rectangle:
                                    self.__width, self.__height)
 
     def __del__(self):
-        number_of_instances -= 1
-        print('Bye rectangle...')
+       Rectangle.number_of_instances -= 1
+       print('Bye rectangle...')
