@@ -1,20 +1,54 @@
 #!/usr/bin/python3
-"""define a Rectangle"""
+"""defines a Rectangle"""
 
 
 class Rectangle:
-    """Rectangle class"""
+    '''A simple class representing a rectangle. '''
     number_of_instances = 0
-    print_symbol = "#"
+    print_symbol = '#'
+
+    @staticmethod
+    def value_validation(value, name):
+        if type(value) is not int:
+            raise TypeError(name + " must be an integer")
+        if value < 0:
+            raise ValueError(name + " must be >= 0")
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        self.value_validation(value, "width")
+        self.__width = value
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        self.value_validation(value, "height")
+        self.__height = value
 
     def __init__(self, width=0, height=0):
-        """init for Rectangle"""
-        self.width = width
-        self.height = height
         Rectangle.number_of_instances += 1
+        self.value_validation(width, "width")
+        self.__width = width
+        self.value_validation(height, "height")
+        self.__height = height
+
+    def area(self):
+        return self.__height * self.__width
+
+    def perimeter(self):
+        if self.__height == 0 or self.__width == 0:
+            return 0
+        else:
+            return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        """prints the rectangle"""
         if self.__height == 0 or self.__width == 0:
             return ""
         size = str(self.print_symbol) * self.__width
@@ -24,67 +58,23 @@ class Rectangle:
         return "\n".join(rect)
 
     def __repr__(self):
-        """returns representation of the Rectangle"""
-        return "{:s}({:d}, {:d})".format((type(self).__name__),
-                                         self.__width, self.__height)
+        return "{}({}, {})".format((type(self).__name__),
+                                   self.__width, self.__height)
 
     def __del__(self):
-        """kill the Rectangle, decrease instance count"""
         Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
+        print('Bye rectangle...')
 
-    @property
-    def width(self):
-        """Rectangle width getter"""
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        """Rectangle width setter"""
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = value
-
-    @property
-    def height(self):
-        """Rectangle height getter"""
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        """Rectangle height setter"""
-        if type(value) != int:
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be >= 0")
-        self.__height = value
-
-    def area(self):
-        """Rectangle area getter"""
-        return self.__height * self.__width
-
-    def perimeter(self):
-        """returns the perimeter of the Rectangle,
-        or nothing if height/width are 0"""
-        if self.__height == 0 or self.__width == 0:
-            return
-        return (self.__height * 2) + (self.__width * 2)
-
-    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Returns the larger rectangle after comparing"""
-        if type(rect_1) != Rectangle:
+        if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) != Rectangle:
+        if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
         else:
             return rect_2
 
-    @classmethod
     def square(cls, size=0):
-        """initializes a new square instance"""
-        return cls(size, size)
+        my_square = cls(size, size)
+        return my_square
