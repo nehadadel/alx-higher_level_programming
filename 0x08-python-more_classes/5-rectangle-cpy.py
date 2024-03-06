@@ -22,8 +22,12 @@ class Rectangle:
 
     def __repr__(self):
         """returns representation of the Rectangle"""
-        return "{}({}, {})".format((type(self).__name__), self.__width,
-                                   self.__height)
+        return "{:s}({:d}, {:d})".format((type(self).__name__),
+                                         self.__width, self.__height)
+
+    def __del__(self):
+        """kill the Rectangle"""
+        print("Bye rectangle...")
 
     @property
     def width(self):
