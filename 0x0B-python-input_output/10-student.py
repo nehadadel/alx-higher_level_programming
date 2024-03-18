@@ -13,13 +13,11 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        if attrs = None:
+        if attrs is None:
             return vars(self)
 
         new_dictionary = {}
-        for key, vlaue in vars(self):
+        for key, value in self.__dict__.items():
             if key in attrs:
                 new_dictionary[key] = value
         return new_dictionary
-
-            
