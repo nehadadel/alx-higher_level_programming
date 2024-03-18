@@ -1,8 +1,7 @@
 #!/usr/bin/python3
+
+
 """student class"""
-
-
-import json
 
 
 class Student:
@@ -13,5 +12,14 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
-        return vars(self)
+    def to_json(self, attrs=None):
+        if attrs = None:
+            return vars(self)
+
+        new_dictionary = {}
+        for key, vlaue in vars(self):
+            if key in attrs:
+                new_dictionary[key] = value
+        return new_dictionary
+
+            
