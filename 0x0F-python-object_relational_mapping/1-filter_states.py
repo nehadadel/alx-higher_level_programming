@@ -13,7 +13,7 @@ if __name__ == '__main__':
     # It gives us the ability to have multiple seperate working environments
     # through the same connection to the database.
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'")
     rows = cur.fetchall()
     for i in rows:
         print(i)
