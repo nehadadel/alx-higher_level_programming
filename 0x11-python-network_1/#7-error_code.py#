@@ -11,8 +11,4 @@ import requests
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    r = requests.get(url)
-    try:
-        print(r.text)
-    except requests.exceptions.HTTPError as e:
-        print("Error code: {}".format(r.status_code)
+    r = requests.post(url)
