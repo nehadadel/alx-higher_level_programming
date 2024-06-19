@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const process = require('process');
-if (isNaN(process.argv[2]) || ((process.argv.length === 3) && (process.argv[2] === '1'))) {
+if (isNaN(process.argv[2]) || (process.argv.length === 3)) {
   console.log('0');
 } else {
   const arr = process.argv.slice(2);
