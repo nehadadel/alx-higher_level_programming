@@ -1,0 +1,10 @@
+#!/usr/bin/node
+const process = require('process');
+if (isNaN(Number(process.argv[2])) || isNaN(Number(process.argv[3]))) {
+  console.log('NaN');
+} else {
+  let result = add(Number(process.argv[2]), Number(process.argv[3]));
+}
+function add(a, b) {
+  return a + b;
+}
